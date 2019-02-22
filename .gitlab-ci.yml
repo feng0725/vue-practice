@@ -1,0 +1,44 @@
+stages:
+  - deploy
+    
+deploy_staging:
+  stage: deploy
+  script:
+    - cnpm install && cnpm run build
+    - rsync -zacv --delete dist/ root@182.254.157.72:/usr/local/tomcat/webapps/ts-console/
+  cache:
+    key: dist-cache
+    paths:
+      - dist/
+    policy: push
+  environment:
+    name: staging
+    url: http://test.ucans.net/ts-console/#/login
+  only:
+    - master
+  tags:
+    - node
+
+deploy_product:
+  stage: deploy
+  script:
+    - ssh root@115.159.65.127 "rm -vf /home/urrt/webapp_backups/ts-console.tar.gz"
+    - ssh root@115.159.65.127 "cd /home/urrt/webapp_backups; tar zcf ts-console.tar.gz -C /usr/local/tomcat/webapps/ts-console ."
+    - rsync -zacv --delete dist/ root@115.159.65.127:/usr/local/tomcat/webapps/ts-console/
+    - rsync -zacv --delete dist/ root@182.254.246.119:/usr/local/tomcat/webapps/ts-console/
+    - rsync -zacv --delete dist/ root@115.159.161.181:/usr/local/tomcat/webapps/ts-console/
+  cache:
+    key: dist-cache
+    paths:
+      - dist/
+    policy: pull
+  environment:
+    name: production
+    url: http://www.ucans.net/ts-console/#/login
+  when: manual
+  only:
+    - master
+  tags:
+    - node
+
+    

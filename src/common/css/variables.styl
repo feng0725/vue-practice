@@ -1,0 +1,232 @@
+@import "edit-new.styl"
+
+$buttonColor = #86ce2f
+$edit = #11ba9e
+$textError = #d41e3c
+.textError {
+    color: $textError
+}
+
+.textBlue {
+    color: #117dd6;
+}
+
+button.refuse
+    background-color: #d41e3c
+    border: 1px solid #d41e3c
+
+button.agree
+    background-color: #117dd6
+
+button.green
+    background-color: #11ba9e
+
+button.white-blue
+    background-color: #fff
+    border: 1px solid #0c6bba
+    color: #0c6bba
+
+button.cance
+    color: #8b8b8b;
+    background-color: #fff;
+    border: 1px solid #8b8b8b;
+
+button.refuse[disabled], button.agree[disabled], button.green[disabled], button.white-blue[disabled], button.cance[disabled]
+    color: #c5c8ce;
+    background-color: #f7f7f7;
+    border-color: #dcdee2;
+
+.dialog
+    button
+        width: 80px;
+        //height: 30px;
+        //line-height:30px;
+
+        &.cance
+            border: 1px solid #8b8b8b;
+
+.all-height
+    height: 100%;
+
+.min-height
+    min-height: 100%;
+
+.bgfff
+    background-color: #fff
+
+.bgf2f2f2
+    background-color: #f2f2f2
+
+.pagination
+    padding-bottom: 80px;
+
+thead
+    .fontBlue
+        color: #0c6bba;
+
+    .fontGreen
+        color: #11ba9e;
+
+    .fontRed
+        color: #D14B5F
+
+    .fontGray
+        color: #999;;
+
+.ivu-input-search
+    border: 1px solid #d1d2d3 !important;
+    padding: 0 4px !important;
+    width: 25px;
+    background-color: #fff !important;
+
+    i
+        color: #117dd6;
+
+.pointer {
+    cursor: pointer;
+}
+
+.underline
+    text-decoration: underline;
+
+.dialog .ivu-form .ivu-form-item-label {
+    color: #000;
+}
+
+.ivu-btn-text:hover
+    background-color: transparent
+
+.ivu-btn-text.active, .ivu-btn-text:active
+    background-color: transparent
+
+.ivu-btn-text:focus
+    box-shadow: none
+
+.ivu-btn-text.disabled, .ivu-btn-text.disabled.active, .ivu-btn-text.disabled:active, .ivu-btn-text.disabled:focus, .ivu-btn-text.disabled:hover, .ivu-btn-text[disabled], .ivu-btn-text[disabled].active, .ivu-btn-text[disabled]:active, .ivu-btn-text[disabled]:focus, .ivu-btn-text[disabled]:hover, fieldset[disabled] .ivu-btn-text, fieldset[disabled] .ivu-btn-text.active, fieldset[disabled] .ivu-btn-text:active, fieldset[disabled] .ivu-btn-text:focus, fieldset[disabled] .ivu-btn-text:hover
+    background-color: transparent;
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes fadeOut {
+    from {
+        opacity: 1;
+    }
+    to {
+        opacity: 0;
+    }
+}
+
+.show {
+    display: block
+}
+
+.hide {
+    display: none
+}
+
+.img-box
+    img
+        width: 100%;
+
+// 表格表头底色
+.ivu-table th
+    background-color: #efefef
+
+// 页面顶部按钮
+.btn-box
+    margin-bottom: 20px;
+
+    > button
+        padding-left: 0;
+        padding-right: 0;
+        width: 95px;
+        height: 32px;
+        margin-right: 15px;
+
+//        隐藏表格左右边框
+.tableList
+    .ivu-table-wrapper
+        border-left: 0;
+
+    .ivu-table:after
+        width: 0;
+
+    .ivu-table-wrapper
+        border: 0;
+
+.ivu-btn
+    text-align: center;
+
+
+// 去掉红星星
+.ivu-form-item-required .ivu-form-item-label:before
+    content: ''
+    margin-right: 0;
+
+.two-page
+    min-height: 100%;
+    background: #fff;
+    padding: 38px 85px 80px 45px;
+
+.edit
+    body.view
+        max-height: 400px;
+        overflow: auto
+
+
+.page-info
+    position: fixed;
+    background-color: #fff
+    bottom: 0;
+    padding-bottom: 10px;
+    left: 245px;
+    right: 85px;
+    border-top: 1px solid #d1d5de;
+    margin-top: 30px;
+    z-index:1;
+    &.absolute
+        position: absolute;
+
+    .page
+        margin-top: 20px;
+        margin-left: 25px;
+
+    > div
+        margin-top: 18px;
+        height: 30px;
+        line-height: 30px;
+
+//导航菜单
+a.ivu-menu-item
+    padding-right: 0;
+
+.demo-spin-icon-load {
+    animation: ani-demo-spin 1s linear infinite;
+}
+
+///*定义滚动条高宽及背景 高宽分别对应横竖滚动条的尺寸*/
+//scrollbar{
+//    width: 10px;  /*滚动条宽度*/
+//    height: 10px;  /*滚动条高度*/
+//}
+//
+///*定义滚动条轨道 内阴影+圆角*/
+//scrollbar-track{
+//    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.3);
+//    border-radius: 10px;  /*滚动条的背景区域的圆角*/
+//    background-color: #F1F1F1;/*滚动条的背景颜色*/
+//}
+//
+///*定义滑块 内阴影+圆角*/
+//scrollbar-thumb{
+//    border-radius: 10px;  /*滚动条的圆角*/
+//    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,.3);
+//    background-color: #C0C0C0;  /*滚动条的背景颜色*/
+//}
